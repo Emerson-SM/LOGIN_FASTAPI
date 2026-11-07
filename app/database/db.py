@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-db_url = os.getenv('DATABASE_URL')
+db_url = os.getenv('DATABASE_URL', 'sqlite:///database.db')
 
 engine = create_engine(
     db_url, connect_args={"check_same_thread": False}, echo=True
